@@ -1,8 +1,13 @@
 <div class="infoCard">
     <div class="cardHeader">
-        <h2></h2>
+        <h2>{{ country.name }}</h2>
     </div>
     <div class="cardDetails">
-        onkd
+        <h4>Capital: {{ country.capitalCity }}</h4>
+        <h4>Region: {{country.region.value}} </h4>
+        <h4>Income Level: {{ country.incomeLevel.value }} </h4>
+        <h4>Latitude({{country.capitalCity}}): {{ country.latitude }}</h4>
+        <h4>Longitude({{country.capitalCity}}): {{ country.longitude }}</h4>
     </div>
+    <p class="tiny">All country data provided by The World Bank Group©</p>
 </div>

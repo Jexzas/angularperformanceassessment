@@ -5,3 +5,7 @@ path:hover, path:focus {
 .hover {
     fill: #113951;
 }
+
+.tiny {
+    font-size: .25em;
+}

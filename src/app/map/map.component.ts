@@ -9,9 +9,15 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 })
 export class MapComponent {
   constructor() {};
-  select(event: Event): void {
-    this.countrySelected.emit((event.target as HTMLElement).dataset.countryCode);
-  }
   @Output() countrySelected = new EventEmitter<any>();
+
+  ngOnInit(){ 
+    let paths: HTMLCollectionOf<Element> = document.getElementsByTagName('path');
+    for (let path of paths) {
+      path.addEventListener('click', (e: Event) => {
+        this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
+      })
+    }
+  }
 }
 

@@ -23,6 +23,7 @@
     }
 }
 .left {
+    text-align: center;
     flex-grow: 5;
     @media (max-width: 1000px) {
         margin: 3em 3em;

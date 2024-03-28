@@ -9,8 +9,9 @@
 <div class="home">
   <div class="left">
     <app-map (countrySelected)="selectCountry($event)" />
+    <p class="tiny">Map provided by: Copyright (c) 2020 Pareto Softare, LLC DBA Simplemaps.com</p>
   </div>
   <div class="right">
-    <app-info [country]="selectedCountry"/>
+    <app-info *ngIf="selectedCountry != ''" [country]="selectedCountryDetails"/>
   </div>
 </div>
