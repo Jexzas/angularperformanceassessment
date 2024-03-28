@@ -17,6 +17,9 @@ export class MapComponent {
       path.addEventListener('click', (e: Event) => {
         this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
       })
+      path.addEventListener('touchstart', (e: Event) => {
+        this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
+      })
     }
   }
 }
