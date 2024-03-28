@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   constructor(private http: ApiService) {};
-  title: string = 'PerformanceAssessment';
+  title: string = 'Interactive World Map';
   countries = new Array<any>;
   async populateCountries () {
     let data = await this.http.getCountries();
