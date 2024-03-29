@@ -12,7 +12,7 @@ export class MapComponent {
   @Output() countrySelected = new EventEmitter<any>();
 
   touchSelect(e: Event): void {
-    this.countrySelected.emit((e.target as HTMLElement).getAttribute("data-countryCode"));
+    (e.target as HTMLElement).click();
   }
 
   ngOnInit(){ 
