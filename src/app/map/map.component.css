@@ -1,3 +1,7 @@
+path {
+    cursor: pointer;
+}
+
 path:hover, path:focus {
     fill: #113951;
 }
@@ -9,3 +13,4 @@ path:hover, path:focus {
 .tiny {
     font-size: .25em;
 }
+
