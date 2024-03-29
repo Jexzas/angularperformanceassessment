@@ -11,19 +11,17 @@ export class MapComponent {
   constructor() {};
   @Output() countrySelected = new EventEmitter<any>();
 
+  touchSelect(e: Event): void {
+    this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
+  }
+
   ngOnInit(){ 
     let paths: NodeListOf<Element> = document.querySelectorAll('path');
     for (let path of paths) {
-      if (window.innerWidth < 1024) {
-        path.addEventListener('touchstart', (e: Event) => {
-          this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
-        })
-      } else {
         path.addEventListener('click', (e: Event) => {
           this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
         })
       }
-    }
   }
 }
 

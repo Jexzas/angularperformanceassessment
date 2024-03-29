@@ -12,6 +12,6 @@
     <p class="tiny">Map provided by: Copyright (c) 2020 Pareto Softare, LLC DBA Simplemaps.com</p>
   </div>
   <div class="right">
-    <app-info *ngIf="selectedCountry != ''" [country]="selectedCountryDetails"/>
+    <app-info *ngIf="selectedCountry && selectedCountry != ''" [country]="selectedCountryDetails"/>
   </div>
 </div>
