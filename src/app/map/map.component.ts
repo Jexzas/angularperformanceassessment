@@ -14,12 +14,15 @@ export class MapComponent {
   ngOnInit(){ 
     let paths: HTMLCollectionOf<Element> = document.getElementsByTagName('path');
     for (let path of paths) {
-      path.addEventListener('click', (e: Event) => {
-        this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
-      })
-      path.addEventListener('touchstart', (e: Event) => {
-        this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
-      })
+      if (window.innerWidth < 1024) {
+        path.addEventListener('touchend', (e: Event) => {
+          this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
+        })
+      } else {
+        path.addEventListener('click', (e: Event) => {
+          this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
+        })
+      }
     }
   }
 }
