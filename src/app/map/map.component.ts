@@ -12,7 +12,7 @@ export class MapComponent {
   @Output() countrySelected = new EventEmitter<any>();
 
   ngOnInit(){ 
-    let paths: HTMLCollectionOf<Element> = document.getElementsByTagName('path');
+    let paths: NodeListOf<Element> = document.querySelectorAll('path');
     for (let path of paths) {
       if (window.innerWidth < 1024) {
         path.addEventListener('touchstart', (e: Event) => {
