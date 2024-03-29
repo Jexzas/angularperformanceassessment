@@ -12,7 +12,8 @@ export class MapComponent {
   @Output() countrySelected = new EventEmitter<any>();
 
   touchSelect(e: Event): void {
-    (e.target as HTMLElement).click();
+    let event = new Event("click");
+    (e.target as HTMLElement).dispatchEvent(event); 
   }
 
   ngOnInit(){ 
