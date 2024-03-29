@@ -1,7 +1,9 @@
 path {
     cursor: pointer;
 }
-
+svg {
+    cursor: pointer;
+}
 path:hover, path:focus {
     fill: #113951;
 }
