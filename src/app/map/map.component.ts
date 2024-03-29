@@ -15,7 +15,7 @@ export class MapComponent {
     let paths: HTMLCollectionOf<Element> = document.getElementsByTagName('path');
     for (let path of paths) {
       if (window.innerWidth < 1024) {
-        path.addEventListener('touchend', (e: Event) => {
+        path.addEventListener('touchstart', (e: Event) => {
           this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
         })
       } else {
