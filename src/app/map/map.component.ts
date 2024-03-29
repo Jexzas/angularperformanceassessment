@@ -12,7 +12,7 @@ export class MapComponent {
   @Output() countrySelected = new EventEmitter<any>();
 
   touchSelect(e: Event): void {
-    console.log(e);
+    console.log(e.target);
     this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
   }
 
