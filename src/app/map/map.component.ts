@@ -15,7 +15,8 @@ export class MapComponent {
     let paths: NodeListOf<Element> = document.querySelectorAll('path');
     for (let path of paths) {
       if (window.innerWidth < 1024) {
-        path.addEventListener('touchstart', (e: Event) => {
+        let svg = document.getElementById("svg");
+        svg.addEventListener('touchstart', (e: Event) => {
           this.countrySelected.emit((e.target as HTMLElement).dataset.countryCode);
         })
       } else {
